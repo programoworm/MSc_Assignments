@@ -1,2 +1,7 @@
 1. Write a Java program to find the number of times a particular word has occured from an array of strings. Both the array and the word to be found are to be passed as commandline arguments where the word to be found is to be passed as the first commandline argument.
+
 2. Write a Java program to find the sum of two complex numbers given as input from the commandline.
+
+3. Write a Java program to check whether a particular word taken as input from commandline is palindrome or not.
+
+4. 
