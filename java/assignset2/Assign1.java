@@ -1,3 +1,7 @@
+/*1. Design a “Student” class having fields like “name”, ”rollno” and “address”. Write a derived class called
+“MSc_Student” having fields like dept and semester. Write proper constructors for both the classes and
+proper display() method in the derived class to display the details of MSc_Student. Use a Demo class to
+demonstrate the above.*/
 class Student{
 	String name,address;
 	int rollno;
