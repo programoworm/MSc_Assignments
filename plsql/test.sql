@@ -45,11 +45,27 @@ INSERT INTO CUSTOMERS VALUES (5, 'Hardik', 27, 'Bhopal', 8500.00 );
 INSERT INTO CUSTOMERS VALUES (6, 'Komal', 22, 'MP', 4500.00 ); 
 
 declare
-cursor c_customers is select salary,name from customers where salary<5000 for update;-- of salary;
+cursor c_customers is select salary,name from customers;-- where salary<5000 for update;-- of salary;
 c_salary customers.salary%type;
 c_name customers.name%type;
 incr_sal number(5);
 begin
+open c_customers;
+loop
+fetch c_customers into c_salary,c_name;
+exit when c_customers%notfound;
+if c_salary<5000 then
+	incr_sal:=500;
+else
+	incr_sal:=100;
+end if;
+update customers
+set salary=salary+incr_sal
+where customers.salary=c_salary;
+end loop;
+close c_customers;
+end;
+/
 /*open c_customers;
 loop
 fetch c_customers into c_salary,c_name;
@@ -59,7 +75,7 @@ end loop;
 update customers
 set customers.salary=customers.salary+500
 where current of c_customers;
-close c_customers;*/
+close c_customers;
 for customers_rec in c_customers loop
 	if customers_rec.salary<5000	
 		incr_sal:=500;
@@ -69,7 +85,4 @@ for customers_rec in c_customers loop
 	update customers
 	set salary=salary+incr_sal;
 	where current of c_customers;
-end loop;
-end;
-/
-
+end loop;*/
