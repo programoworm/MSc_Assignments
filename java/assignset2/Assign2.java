@@ -23,9 +23,9 @@ class Square extends Shape{
 }
 public class Assign2{
 	public static void main(String args[]){
-		Circle obj1=new Circle(5);
-		Rectangle obj2=new Rectangle(5,6);
-		Square obj3=new Square(4);
+		Shape obj1=new Circle(5);
+		Shape obj2=new Rectangle(5,6);
+		Shape obj3=new Square(4);
 		obj1.area();
 		obj2.area();
 		obj3.area();
