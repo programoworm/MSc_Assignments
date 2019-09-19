@@ -1,4 +1,4 @@
-class Demo extends Thread{
+class Demo implements Runnable{
 	public void run(){
 		for(int i=1;i<=10;i++){
 			System.out.println(Thread.currentThread().getId()+" Value is: "+i);			
@@ -8,14 +8,14 @@ class Demo extends Thread{
 		}
 		catch(InterruptedException e){
 				e.printStackTrace();
-		}	
+		}
 	}
 }
-public class Mythread{
+class Threadbyrunnable{
 	public static void main(String[] args) {
-		Demo obj1=new Demo();
+		Thread obj1=new Thread(new Demo());
 		obj1.start();
-		Demo obj2=new Demo();
+		Thread obj2=new Thread(new Demo());
 		obj2.start();
 	}
 }
