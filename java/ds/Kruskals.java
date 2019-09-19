@@ -48,6 +48,7 @@ class MST{
 		return new_min;
 	}
 	public void findMST(){
+		//System.out.println(Arrays.deepToString(arr));
 		int m=0;
 		int count=1;
 		while(count<arr.length){
