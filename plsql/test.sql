@@ -66,7 +66,8 @@ end loop;
 close c_customers;
 end;
 /
-/*open c_customers;
+
+open c_customers;
 loop
 fetch c_customers into c_salary,c_name;
 exit when c_customers%notfound;
@@ -85,4 +86,96 @@ for customers_rec in c_customers loop
 	update customers
 	set salary=salary+incr_sal;
 	where current of c_customers;
-end loop;*/
+end loop;
+
+========================================
+declare
+	x number:=&x;
+	s number:=0;
+	d number;
+	temp number;
+begin
+	temp:=x;
+	while x!=0 loop
+		d:=mod(x,10);
+		s:=s+d**3;
+		x:=trunc(x/10);
+	end loop;
+	if s=temp then
+		dbms_output.put_line('Armstrong');
+	else
+		dbms_output.put_line('Not Armstrong');
+	end if;
+end;
+/
+
+========================================
+create table square(
+	n number primary,
+	sq number
+);
+declare
+	i number;
+	n number:=&n;
+	p number;
+	cursor c_square is select n,sq from square;
+	sq_rec c_square%rowtype;
+begin
+	for i in 1..n loop
+		p:=i**2;
+		insert into square values(i,p);
+	end loop;
+	dbms_output.put_line('Number    Square');
+	open c_square;
+	loop
+		fetch c_square into sq_rec;
+		exit when c_square%notfound;
+		dbms_output.put_line(sq_rec.n||'          '||sq_rec.sq);
+	end loop;
+end;
+/
+========================================
+create table customer(
+	c_id number(3),
+	c_name varchar2(25),
+	purched number(5)	
+);
+
+
+declare
+	i number;
+	n number:=&n;
+	price number(5);
+	id number(3);
+	--cust varchar2:='cust';
+begin
+	id:=100;
+	price:=10000;
+	for i in 1..n loop
+		price:=price-910;
+		insert into customer values(id,'cust'||i,price);
+		id:=id+1;
+	end loop;
+end;
+/
+select * from customer;
+=========================================
+--declare
+--p number;
+create or replace function fact(num number)
+return number
+is
+f number;
+begin
+	if num<=1 then
+		f:=1;
+	else
+		f:=num*fact(num-1);
+	end if;
+	return f;
+end;
+begin
+	p:=fact(6);
+	dbms_output.put_line(p);
+end;
+/
