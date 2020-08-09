@@ -8,4 +8,4 @@ These are almost all the assignments done during my MSc(2019-2021) in St Xaviers
    - plsql  
 2. sem2  
    - html  
-   -socket  
+   - socket  
