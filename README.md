@@ -1,7 +1,7 @@
 # Assignments for MSc  
 These are almost all the assignments done during my MSc(2019-2021) in St Xaviers College, Kolkata.  
 
-## Contents  
+## Contents   
 1. sem1  
    - java  
    - openmp  
