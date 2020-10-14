@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Registration form</title>
+	<script>
+		function changetoGreen(){   
+			document.body.style.backgroundColor= "lightgreen";
+		}
+	</script>
+	<style type="text/css">
+		h1{
+			font-size: 65px;
+			text-align: center;
+			font-variant: small-caps;
+		}
+		body{
+			border: 2px dashed black;
+			background-color: skyblue;
+			font-size: 20px;
+		}
+		#tid{
+			height:25px;
+    		font-size:20px;
+    		text-align: center;
+		}
+		b{
+			line-height: 2px;
+		}
+		#b{
+			height:30px;
+    		font-size:20px;
+    		text-align: center;
+		}
+	</style>
+	<b>
+		<br/>
+	</b>
+	<h1>Registration Form</h1>
+</head>
+<body>
+	<form>
+	<center>
+		Name: &nbsp;<select id="tid" name="sal">
+			<option value="mr">Mr.</option>
+			<option value="mrs">Mrs.</option>
+			<option value="mx">Mx.</option>
+			<option value="dr">Dr.</option>
+			<option value="prof">Prof.</option>
+		</select>&nbsp;
+		<input id="tid" type="text" name="name" size="20px" height="100" placeholder="Enter your name"/>
+		<br/><br/>
+		DOB: &nbsp;
+		<input id="tid" type="date" name="dob" max="2019-12-31"/><br/><br/>
+		Gender: &nbsp;
+		Male&nbsp;<input type="radio" name="male"/>
+		Female&nbsp;<input type="radio" name="fmale"/>
+		Other&nbsp;<input type="radio" name="other"/><br/><br/>
+		Phone: &nbsp;
+		<input id="tid" type="text" name="country code"  value="+91" size="1"/>   
+		<input id="tid" type="text" name="phone" size="10" maxlength="10" placeholder="XXXXX XXXXX"/><br/>
+		<br/>
+		Email: &nbsp;<input id="tid" type="email" name="mail" size="20" placeholder="yourname@example.com"/><br/><br/>
+		Address:<br/>
+		<textarea cols="50" rows="5"></textarea><br/><br/>
+		Vehicle: &nbsp;
+		Two-wheeler <input type="checkbox" name="two"/>&nbsp;
+		Four-wheeler <input type="checkbox" name="four"/><br/><br/>
+		<input id="b" type="submit" value="Register Me">&emsp;   
+		<input id="b" type="reset" Value="Reset">&emsp;
+		<input id="b" type="button" value="ColourClick" onclick="changetoGreen()"><br/><br/><br/>
+		<a href="home.html" target="f3" style="color: black; font-size: 25px">
+			Home
+		</a>
+	</center>
+	</form>
+</body>
+</html>
